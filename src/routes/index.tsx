@@ -57,8 +57,8 @@ const projects = [
     tags: ["PHP", "MySQL", "HTML/CSS"],
     description:
       "Built during OJT for a school guidance counselor to generate student information reports quickly and efficiently.",
-    features: "Data management, report generation, search & filter",
-    challenge: "Structuring legacy PHP for maintainable CRUD workflows",
+    features: "Data management, information generation, search & filter",
+    challenge: "Script permission and authorization, and case sensitivity",
   },
   {
     n: "04",
