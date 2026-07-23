@@ -1,0 +1,91 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-line: var(--brand-line);
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Technical lab aesthetic tokens */
+  --brand-bg: oklch(0.968 0.002 106);         /* #f4f4f5 zinc-100 */
+  --brand-surface: oklch(0.985 0.002 106);    /* zinc-50 */
+  --brand-text: oklch(0.21 0.006 285);        /* #18181b zinc-900 */
+  --brand-muted: oklch(0.552 0.014 285);      /* #71717a zinc-500 */
+  --brand-accent: oklch(0.577 0.194 41);      /* #c2410c orange-700 */
+  --brand-line: oklch(0 0 0 / 0.06);
+
+  --background: var(--brand-bg);
+  --foreground: var(--brand-text);
+  --card: var(--brand-surface);
+  --card-foreground: var(--brand-text);
+  --popover: var(--brand-surface);
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-text);
+  --primary-foreground: var(--brand-bg);
+  --secondary: oklch(0.94 0.003 106);
+  --secondary-foreground: var(--brand-text);
+  --muted: oklch(0.94 0.003 106);
+  --muted-foreground: var(--brand-muted);
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-bg);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0 0 0 / 0.08);
+  --input: oklch(0 0 0 / 0.1);
+  --ring: var(--brand-accent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-brand-accent) 15%, transparent);
+    color: var(--color-brand-accent);
+  }
+}
